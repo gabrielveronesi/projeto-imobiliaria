@@ -1,0 +1,21 @@
+https://localhost:5001/api/Teste
+
+[sempre]
+docker build --rm -f "Dockerfile" -t "server:latest" .
+
+[talvez]
+heroku login
+
+[talvez]
+docker images
+
+[sempre]
+heroku container:login
+
+[sempre]
+heroku container:push web -a mobtec-server-teste
+
+[sempre]
+heroku container:release web -a mobtec-server-teste
+
+heroku logs --tail -a mobtec-server-teste

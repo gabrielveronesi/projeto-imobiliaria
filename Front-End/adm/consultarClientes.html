@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Clientes</title>
+
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png">
+
+    <!--Axios-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="./css/consultarClientes.css" rel="stylesheet">
+    <script src="./js/consultarClientes.js"></script>
+
+</head>
+
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link" href="./cadastrarCliente.html">Cadastrar Cliente</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="./consultarClientes.html">Consultar clientes</a>
+    </li>
+    <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li> -->
+</ul>
+
+<body>
+    <div class="container">
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID CLIENTE</th>
+                    <th scope="col">NOME COMERCIAL</th>
+                    <th scope="col">NOME CLIENTE</th>
+                    <th scope="col">URL CLIENTE</th>
+                    <th scope="col">ATIVO</th>
+                </tr>
+            </thead>
+            <tbody id="colunaNomeCliente">
+              
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+
+</html>

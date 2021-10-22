@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Cliente</title>
+
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png">
+    
+    <!--Axios-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="./css/cadastrarCliente.css" rel="stylesheet">
+    <script src="./js/cadastrarCliente.js"></script>
+
+</head>
+
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link active" href="./cadastrarCliente.html">Cadastrar Cliente</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="./consultarClientes.html">Consultar clientes</a>
+    </li>
+    <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li> -->
+</ul>
+
+<body>
+    <div class="container">
+
+        <form>
+
+            <div class="form-group">
+                <label>Nome Comercial</label>
+                <input type="nmComercial" class="form-control" id="nmComercial" placeholder="">
+                <small id="" class="form-text text-muted">Nome do estabelecimento</small>
+            </div>
+
+            <div class="form-group">
+                <label>Nome do Cliente</label>
+                <input type="nmCliente" class="form-control" id="nmCliente" placeholder="">
+                <small id="" class="form-text text-muted">Nome do contratante do serviço</small>
+            </div>
+
+            <div class="form-group">
+                <label>Numero de whatsapp</label>
+                <input type="noWhatsApp" class="form-control" id="noWhatsApp" placeholder="">
+                <small id="" class="form-text text-muted">Numero de whatsapp</small>
+            </div>
+
+            <div class="form-group">
+                <label>Numero de telefone</label>
+                <input type="noTelefone" class="form-control" id="noTelefone" placeholder="">
+                <small id="" class="form-text text-muted">Numero de telefone (não é whatsapp)</small>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="noTelefone" class="form-control" id="email" placeholder="">
+                <small id="" class="form-text text-muted">Email</small>
+            </div>
+
+            <div class="form-group">
+                <label>Endereco</label>
+                <input type="endereco" class="form-control" id="endereco" placeholder="">
+                <small id="" class="form-text text-muted">Endereco</small>
+            </div>
+
+            <div class="form-group">
+                <label>Facebook</label>
+                <input type="facebook" class="form-control" id="facebook" placeholder="">
+                <small id="" class="form-text text-muted">Facebook</small>
+            </div>
+
+            <div class="form-group">
+                <label>Instagram</label>
+                <input type="instagram" class="form-control" id="instagram" placeholder="">
+                <small id="" class="form-text text-muted">Instagram</small>
+            </div>
+
+            <div class="form-group">
+                <label>Linkedin</label>
+                <input type="linkedin" class="form-control" id="linkedin" placeholder="">
+                <small id="" class="form-text text-muted">Linkedin</small>
+            </div>
+
+            <div class="form-group">
+                <label>Youtube</label>
+                <input type="youtube" class="form-control" id="youtube" placeholder="">
+                <small id="" class="form-text text-muted">Youtube</small>
+            </div>
+
+            <div class="form-group">
+                <label>Twitter</label>
+                <input type="twitter" class="form-control" id="twitter" placeholder="">
+                <small id="" class="form-text text-muted">Twitter</small>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Logo</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <div id="info"></div>
+            <button type="submit" onclick=cadastrarCliente() class="btn btn-primary">Enviar</button>
+        </form>
+
+    </div>
+
+
+
+</body>
+
+</html>

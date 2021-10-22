@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Logar</title>
+
+  <!--#region Icone Principal-->
+  <link rel="icon" href="../images/icone.ico">
+
+  <!--Axios-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!--#region Importação-->
+  <link href="../painel/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="../painel/logar.css" rel="stylesheet">
+  
+  <script src="../painel/bootstrap/bootstrap.min.js"> </script>
+  <script src="../painel/logar.js">     </script>
+
+  <!--#endregion Importação-->
+</head>
+
+<body>
+
+  <body class="text-center">
+    <form class="form-signin" id="login">
+      <img class="mb-4" src="../images/icone.ico" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Fazer Login</h1>
+      <label for="inputEmail" class="sr-only">Endereço de e-mail</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus>
+      <label for="inputPassword" class="sr-only">Senha</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+      <div class="checkbox mb-3">
+      </div>
+      <a class="btn btn-lg btn-primary btn-block" style="color:lavenderblush;" onclick="logar()">Entrar</a>
+
+      <p class="mt-5 mb-3 text-muted">&copy; 2021 - MobTec</p>
+      <div id="error"></div>
+    </form>
+
+  </body>
+</body>

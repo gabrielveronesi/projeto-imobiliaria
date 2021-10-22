@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>Imobiliária Veronesi</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!--Axios-->
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+   <!-- bootstrap css -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- fevicon -->
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+      media="screen">
+
+   <script src="index.js"></script>
+
+
+</head>
+<!-- body -->
+
+<body class="main-layout">
+   <!-- loader  -->
+   <div class="loader_bg">
+      <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+   </div>
+   <!-- end loader -->
+   <!-- header -->
+   <header>
+      <!-- header inner -->
+      <div class="header">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo">
+                           <div class="logo" id="Logo"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+                        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav mr-auto">
+                           <li class="nav-item active">
+                              <a class="nav-link" href="index.html">Home</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="about.html">Sobre</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="contact.html">Contato</a>
+                           </li>
+                           </li>
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- end header inner -->
+   <!-- end header -->
+   <!-- banner -->
+   <br>
+   <section class="container">
+      <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
+         <div id="Carrossel"></div>
+         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+         </a>
+         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+         </a>
+
+         <div class="booking_ocline">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-5">
+                     <div class="book_room">
+                        <h1>Buscar Imóvel</h1>
+                        <form class="book_now">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <span>Tipo</span>
+                                 <select class="online_book" placeholder="">
+                                    <option value="1">Casa</option>
+                                    <option value="2">Apartamento</option>
+                                    <option value="3">Terreno</option>
+                                    <option value="4">Outros</option>
+                                 </select>
+                              </div>
+                              <div class="col-md-12">
+                                 <span>Cidade</span>
+                                 <select class="online_book" placeholder="">
+                                    <option value="1">Matão</option>
+                                    <option value="2">Araraquara</option>
+                                    <option value="3">São Carlos</option>
+                                 </select>
+                              </div>
+                              <div class="col-md-12">
+                                 <span>Referência</span>
+                                 <input class="online_book" placeholder="" type="text">
+                                 </select>
+                              </div>
+                              <div class="col-md-12">
+                                 <button class="book_btn">Pesquisar</button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- end banner -->
+   <!-- end about -->
+   <!-- our_room -->
+   <div class="our_room">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="titlepage">
+                  <h2>Imóveis Disponíveis</h2>
+                  <p>Encontre a casa ideal para você</p>
+               </div>
+            </div>
+         </div>
+
+         <div class="row" id="ListaCasas"></div>
+
+         <!--Paginação-->
+         <div id="Paginacao" class="pagination pagination-lg justify-content-center"></div>
+      </div>
+   </div>
+   <!-- end our_room -->
+
+   <!-- end gallery -->
+   <!-- blog -->
+   <div class="blog" style="width:100%">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="titlepage">
+                  <h2>Imóveis em destaque</h2>
+                  <p>Confira algum dos nossos imóveis em destaque.</p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-4">
+               <div class="blog_box">
+                  <div class="blog_img">
+                     <figure><img src="images/blog1.jpg" alt="#" /></figure>
+                  </div>
+                  <div class="blog_room">
+                     <h3>Residencial Unique</h3>
+                     <span>Consulte Valores</span>
+                     <p>Residencial Unique, prontinho para morar! Infraestrutura completa, Opções com 3 suítes ou 3
+                        quartos com 1 suíte</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="blog_box">
+                  <div class="blog_img">
+                     <figure><img src="images/blog2.jpg" alt="#" /></figure>
+                  </div>
+                  <div class="blog_room">
+                     <h3>Residencial Unique</h3>
+                     <span>Consulte Valores</span>
+                     <p>Residencial Unique, prontinho para morar! Infraestrutura completa, Opções com 3 suítes ou 3
+                        quartos com 1 suíte</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="blog_box">
+                  <div class="blog_img">
+                     <figure><img src="images/blog3.jpg" alt="#" /></figure>
+                  </div>
+                  <div class="blog_room">
+                     <h3>Residencial Unique</h3>
+                     <span>Consulte Valores</span>
+                     <p>Residencial Unique, prontinho para morar! Infraestrutura completa, Opções com 3 suítes ou 3
+                        quartos com 1 suíte</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end blog -->
+   <!--  contact -->
+   <div class="contact">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="titlepage">
+                  <h2>Contato</h2>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+
+            <form id="request" class="main_form">
+               <div class="row">
+                  <div class="col-md-12 ">
+                     <input class="contactus" placeholder="Nome" type="type" name="Name">
+                  </div>
+                  <div class="col-md-12">
+                     <input class="contactus" placeholder="Email" type="type" name="Email">
+                  </div>
+                  <div class="col-md-12">
+                     <input class="contactus" placeholder="Numero de Telefone" type="type" name="Phone Number">
+                  </div>
+                  <div class="col-md-12">
+                     <textarea class="textarea" placeholder="Mensagem" type="type" Message="Name">Mensagem</textarea>
+                  </div>
+                  <div class="col-md-12">
+                     <button class="send_btn">Enviar</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <script src="index.js"></script>
+   <!-- end contact -->
+   <!--  footer -->
+   <footer>
+      <div class="footer">
+         <div class="container" id="_Footer">
+            
+         </div>
+         <div class="copyright">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-10 offset-md-1">
+                     <p>© 2022 Site criado por <a href="#"> MOBTEC Sistemas Imobiliários</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- end footer -->
+   <!-- Javascript files-->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <!-- sidebar -->
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+</body>
+
+</html>

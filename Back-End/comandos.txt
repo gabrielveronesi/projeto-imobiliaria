@@ -1,0 +1,3 @@
+dotnet ef database update
+dotnet ef migrations add imgs02
+dotnet tool install --global dotnet-ef

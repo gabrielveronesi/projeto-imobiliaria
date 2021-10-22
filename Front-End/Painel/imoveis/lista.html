@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Painel Administrativo</title>
+
+    <!--#region Icone Principal-->
+    <link rel="icon" href="../../images/icone.ico">
+
+    <!--Axios-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--#region Importação-->
+    <link href="../imoveis/css/lista.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="../imoveis/js/lista.js"></script>
+    <!--#endregion Importação-->
+</head>
+
+<body class="bg-light">
+
+    <!--#region Nav-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="background-color: #e3f2fd;">
+        <a class="navbar-brand mr-auto mr-lg-5" href="#">Menu</a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--#endregion Nav-->
+
+        <!--#region Menu Topo-->
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../imoveis/lista.html">Imóveis <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../configuracoes/editar.html">Configurações</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button type="button" class="btn btn-outline-danger my-2 my-sm-0" onclick="sair()">Sair</button>
+            </form>
+        </div>
+    </nav>
+
+    <!--#region Sub Nav-->
+    <div class="nav-scroller bg-white shadow-sm">
+        <nav class="nav nav-underline">
+            <a class="nav-link active" href="lista.html">Lista de Imóveis</a>
+            <a class="nav-link" href="adicionar.html">Adicionar Imóveis</a>
+        </nav>
+    </div>
+    <!--#endregion Sub Nav-->
+    <!--#endregion Menu Topo-->
+
+    <main role="main" class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+            <!--<img class="mr-3" src="/Front-End/Images/favpng_house-icon.png" alt="" width="48" height="48">-->
+            <div class="lh-100">
+                <h6 class="mb-0 text-white lh-100">Lista de Imóveis</h6>
+                <small>Todos os imóveis cadastrados no site aparecerão aqui.</small>
+            </div>
+        </div>
+
+        <!--#region Lista de casas-->
+        <!--#region Pesquisa-->
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+            <div id="BotaoPesquisar"></div>
+            <!--#endregion Pesquisa-->
+
+            <!--#region TEMPORARIA! Lista de casas-->
+            <div id="TabelaListaImoveis"></div>
+            
+            <br>
+            <div id="UsuarioLogado"></div>
+
+            <!--Paginação-->
+            <div id="Paginacao"></div>
+
+            <!--#endregion TEMPORARIA! Lista de casas-->
+            
+        </div>
+        <!--#endregion Lista de casas-->
+        </div>
+
+    </main>
+
+</body>
+
+</html>
