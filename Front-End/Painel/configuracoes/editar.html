@@ -12,10 +12,6 @@
   <!--#region Icone Principal-->
   <link rel="icon" href="../../images/icone.ico">
 
-  <!--#region Importação-->
-  <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
-  <link href="../configuracoes/css/editar.css" rel="stylesheet">
-
   <!--Axios-->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -30,6 +26,10 @@
   <script src="../bootstrap/popper.min.js">    </script>
   <script src="../bootstrap/holder.min.js">    </script>
   <script src="../configuracoes/js/editar.js"> </script>
+
+  <!--#region Importação-->
+  <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="../configuracoes/css/editar.css" rel="stylesheet">
 
   <!--#endregion Importação-->
 </head>
@@ -84,27 +84,24 @@
     <div class="my-3 p-3 bg-white rounded shadow-sm">
 
       <form class="needs-validation" novalidate>
-       
-        <!--#Atualiza Nome-->
-        <label for="basic-url">Topo</label>
-        <div id="atualizaNome"></div>
 
-        <!--#Atualiza Sobre-->
-        <div id="atualizaSobre"></div>
+        <!--#Geral-->
+        <label for="basic-url">Geral</label>
 
-        <br>
+        <div id="atualizaNomeComercial"></div>
+        <div id="atualizaWhatsApp"></div>
+        <div id="atualizaInstagram"></div>
+        <div id="atualizaFacebook"></div>
+        <div id="atualizaEndereco"></div>
+        <div id="atualizaLinkedin"></div>
+        <div id="atualizaYoutube"></div>
+        <div id="atualizaTelefone"></div>
+        <div id="atualizaTwitter"></div>
+        <div id="atualizaEmail"></div>
 
-        <!--#Atualiza Texto - Rodapé-->
-        <label for="basic-url">Rodapé</label>
-        <div id="atualizaTexto"></div>
-
-        <br>
-
-        <!--#Atualiza Contatos-->
-        <label for="basic-url">Contatos</label>
-        <div id="atualizaContatos"></div>
-
-            
+        <!--#Geral-->
+        <label for="basic-url">Imagens</label>
+ 
         <input class="form-control" id="validationCustom05" value="a" required style="display: none;">
         <button type="submit" class="btn btn-success btn-lg btn-block"> Salvar Configurações</button>
       </form>

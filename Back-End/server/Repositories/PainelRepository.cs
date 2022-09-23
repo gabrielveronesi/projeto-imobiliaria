@@ -36,29 +36,29 @@ namespace server.Repositories
 
             if (usuarioCadastrado == null)
             {
-                retorno.mensagem = "Usuario ou senha inválida!";
-                retorno.sucesso = false;
-                retorno.token = null;
+                retorno.mensagem  = "Usuario ou senha inválida!";
+                retorno.sucesso   = false;
+                retorno.token     = null;
                 retorno.idCliente = null;
 
                 return retorno;
             }
             else if (usuarioCadastrado.snAtivo != "S")
             {
-                retorno.mensagem = "Usuario não está ativo!";
-                retorno.sucesso = false;
-                retorno.token = null;
+                retorno.mensagem  = "Usuario não está ativo!";
+                retorno.sucesso   = false;
+                retorno.token     = null;
                 retorno.idCliente = null;
 
                 return retorno;
             }
             else
             {
-                var token = Token.Gerar(parametros.usuario);
-                retorno.mensagem = "Login efetuado com sucesso! ()";
-                retorno.sucesso = true;
-                retorno.token = token;
-                retorno.idCliente = usuarioCadastrado.idCliente;
+                var token             = Token.Gerar(parametros.usuario);
+                    retorno.mensagem  = "Login efetuado com sucesso! ()";
+                    retorno.sucesso   = true;
+                    retorno.token     = token;
+                    retorno.idCliente = usuarioCadastrado.idCliente;
 
                 return retorno;
             }
@@ -84,7 +84,7 @@ namespace server.Repositories
         #region Listar Casas
         public Task<PaginaLista<Casa>> ListarCasas(InListarCasasPainel parametros)
         {
-        
+
             IQueryable<Casa> query = _context.Casas;
 
             query = query.AsNoTracking().OrderBy(a => a.idCasa)
@@ -173,12 +173,12 @@ namespace server.Repositories
 
             if (casa.oculto != "S")
             {
-                casa.oculto = "S";
+                casa.oculto    = "S";
                 retorno.oculto = "Ocultado";
             }
             else
             {
-                casa.oculto = "N";
+                casa.oculto    = "N";
                 retorno.oculto = "Não está mais oculto!";
             }
 
@@ -210,5 +210,33 @@ namespace server.Repositories
         }
 
         #endregion Excluir Casa
+
+        #region Listar Configuracoes
+        public async Task<OutListarDadosClientePainel> ListarConfiguracoes(InListarDadosClientePainel entrada)
+        {
+            OutListarDadosClientePainel retorno = new OutListarDadosClientePainel();
+
+            var DadosCliente = await _context.Clientes.FindAsync(entrada.idCliente);
+
+            retorno.nomeComercial = DadosCliente.nomeComercial;
+            retorno.nomeCliente   = DadosCliente.nomeCliente;
+            retorno.logo          = DadosCliente.logo;
+            retorno.whatsApp      = DadosCliente.whatsApp;
+            retorno.telefone      = DadosCliente.telefone;
+            retorno.email         = DadosCliente.email;
+            retorno.endereco      = DadosCliente.endereco;
+            retorno.facebook      = DadosCliente.facebook;
+            retorno.instagram     = DadosCliente.instagram;
+            retorno.linkedin      = DadosCliente.linkedin;
+            retorno.youtube       = DadosCliente.youtube;
+            retorno.twitter       = DadosCliente.twitter;
+            retorno.banner01      = DadosCliente.banner01;
+            retorno.banner02      = DadosCliente.banner02;
+            retorno.banner03      = DadosCliente.banner03;
+
+            return retorno;
+        }
+
+        #endregion Listar Configuracoes
     }
 }

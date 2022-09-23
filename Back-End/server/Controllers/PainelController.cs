@@ -82,5 +82,14 @@ namespace server.Controllers
         {
             return await _painelService.ExcluirCasa(entrada);
         }
+
+        /// <summary>
+        /// Listar as configurações do cliente passando o idCliente
+        /// </summary>
+        [HttpPost("listar-configuracoes")]
+        public async Task<OutListarDadosClientePainel> ListarConfiguracoes(InListarDadosClientePainel entrada)
+        {
+            return await _painelService.ListarConfiguracoes(entrada);
+        }
     }
 }

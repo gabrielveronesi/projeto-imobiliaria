@@ -22,15 +22,32 @@ axios.get(urlListarConfiguracao)
             alert("Cliente não está ativo, TODO: Exibir um erro, e não exibir a pagina!!")
         }
 
+        var banner01;
+        var banner02;
+        var banner03;
+
+        if (_configuracoes.banner01 == null)
+            banner01 = '../site/images/banner1.jpg'
+        else banner01 = _configuracoes.banner01
+
+        if (_configuracoes.banner01 == null)
+            banner02 = '../site/images/banner2.jpg'
+        else banner02 = _configuracoes.banner02
+
+        if (_configuracoes.banner01 == null)
+            banner03 = '../site/images/banner3.jpg'
+        else banner03 = _configuracoes.banner03
+
+
         document.getElementById("Logo").innerHTML = '<a href=""><img width="80" height="80" src=" ' + _configuracoes.logo + ' " alt="#" /></a>';
         document.getElementById("Carrossel").innerHTML =
             '<div class="carousel-inner">' +
             '<div class="carousel-item active">' +
-            '<img class="first-slide" style="width:1000%; height:600px" src="' + _configuracoes.banner01 + '" alt="First slide"></div>' +
+            '<img class="first-slide" style="width:1000%; height:600px" src="' + banner01 + '" alt="First slide"></div>' +
             '<div class="carousel-item">' +
-            '<img class="second-slide" style="width:1000%; height:600px" src="' + _configuracoes.banner02 + '" alt="Second slide"></div>' +
+            '<img class="second-slide" style="width:1000%; height:600px" src="' + banner02 + '" alt="Second slide"></div>' +
             '<div class="carousel-item">' +
-            '<img class="third-slide" style="width:1000%; height:600px" src="' + _configuracoes.banner03 + '" alt="Third slide">' +
+            '<img class="third-slide" style="width:1000%; height:600px" src="' + banner03 + '" alt="Third slide">' +
             '</div></div>';
 
         document.getElementById("_Footer").innerHTML =

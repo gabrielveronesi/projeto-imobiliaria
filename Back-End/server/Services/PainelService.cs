@@ -106,5 +106,10 @@ namespace server.Services
         {
             return await _painelRepository.ExcluirCasa(entrada);
         }
+
+        public async Task<OutListarDadosClientePainel> ListarConfiguracoes(InListarDadosClientePainel entrada)
+        {
+            return await _painelRepository.ListarConfiguracoes(entrada);
+        }
     }
 }
