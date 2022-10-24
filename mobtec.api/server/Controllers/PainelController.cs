@@ -91,5 +91,42 @@ namespace server.Controllers
         {
             return await _painelService.ListarConfiguracoes(entrada);
         }
+
+        /// <summary>
+        /// Cadastrar fotos
+        /// </summary>
+        [HttpPost("cadastrar-foto")]
+        public async Task<OutCadastrarFoto> CadastrarFoto(InCadastrarFoto entrada)
+        {
+            return await _painelService.CadastrarFoto(entrada);
+        }
+        
+        /// <summary>
+        /// Listar fotos
+        /// </summary>
+        [HttpPost("listar-fotos")]
+        public async Task<List<OutListarFotos>> ListarFotos(InListarFotos entrada)
+        {
+            return await _painelService.ListarFotos(entrada);
+        }
+
+        /// <summary>
+        /// Excluir foto
+        /// </summary>
+        [HttpDelete("excluir-foto")]
+        public async Task<OutDeletarFoto> ExcluirFoto(int idFoto)
+        {
+            return await _painelService.ExcluirFoto(idFoto);
+        }
+
+        /// <summary>
+        /// Atualizar configuracoes geral
+        /// </summary>
+        [HttpPost("atualizar-configuracoes-geral")]
+        [Authorize]
+        public async Task<OutPainelAtualizarConfiguracoesGeral> AtualizarConfiguracoesGeral(InPainelAtualizarConfiguracoesGeral entrada)
+        {
+            return await _painelService.AtualizarConfiguracoesGeral(entrada);
+        }
     }
 }

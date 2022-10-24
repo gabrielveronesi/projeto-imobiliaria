@@ -13,6 +13,12 @@
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
+
+   <!--Axios-->
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
    <!-- bootstrap css -->
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <!-- style css -->
@@ -36,9 +42,10 @@
    <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
    <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css"></script>
-   <script src=""></script>
+   <script src="apresentacao.js"></script>
    <script src=""></script>
    <link href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
+
 
 </head>
 <!-- body -->
@@ -58,8 +65,8 @@
                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                   <div class="full">
                      <div class="center-desk">
-                        <div class="logo" style="width:150px;">
-                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                        <div class="logo">
+                           <div class="logo" id="Logo"></div>
                         </div>
                      </div>
                   </div>
@@ -70,20 +77,25 @@
                         aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                      </button>
+                     <!--NavBar Personalizado-->
                      <div class="collapse navbar-collapse" id="navbarsExample04">
-                        <ul class="navbar-nav mr-auto">
-                           <li class="nav-item active">
-                              <a class="nav-link" href="index.html">Home</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="about.html">Sobre</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="contact.html">Contato</a>
-                           </li>
-                           </li>
-                        </ul>
+                        <script>
+                           document.getElementById("navbarsExample04").innerHTML +=
+                              '<ul class="navbar-nav mr-auto">' +
+                              '<li class="nav-item">' +
+                              '<a class="nav-link" href="index.html?' + clienteUrl + '">Home</a>' +
+                              '</li>' +
+                              '<li class="nav-item ">' +
+                              '<a class="nav-link" href="about.html?' + clienteUrl + '">Sobre</a>' +
+                              '</li>' +
+                              '<li class="nav-item">' +
+                              '<a class="nav-link" href="contact.html?' + clienteUrl + '">Contato</a>' +
+                              '</li>' +
+                              '</li>' +
+                              '</ul>';
+                        </script>
                      </div>
+                     <!--Fim - NavBar Personalizado-->
                   </nav>
                </div>
             </div>
@@ -96,8 +108,8 @@
       <div class="container">
          <div class="row">
             <div class="col-md-12">
-               <div class="title">
-                  <h2>Rua josé simão kfouri,594</h2>
+               <div class="title" id="titulo">
+
                </div>
             </div>
          </div>
@@ -115,14 +127,7 @@
             <!-- Featured blog post-->
             <div class="card mb-4">
                <a href="#!"></a>
-               <div class="card-body">
-                  <div class="small text-muted">Referência: 12344</div>
-                  <h2 class="card-title">Rua josé simão kfouri,594</h2>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid
-                     atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate
-                     voluptatibus possimus, veniam magni quis!</p>
-                  <br>
-                  <a class="btn btn-primary" href="#!">Entrar em contato</a>
+               <div class="card-body" id="descricao">
 
                </div>
 
@@ -145,10 +150,8 @@
             <!-- Side widget-->
             <div class="card mb-4">
                <div class="card-header">Observações</div>
-               <div class="card-body">
-                  <p>Tipo: Aluguel</p>
-                  <p>Valor: R$1.200,00</p>
-                  <p>Cidade: Matão-Sp</p>
+               <div class="card-body" id="observacoes">
+
                </div>
             </div>
          </div>
@@ -158,175 +161,19 @@
    <div class="container">
       <div class="cont">
          <div class="page-head">
-
             <div class="demo-gallery">
                <ul id="lightgallery">
-
-
-
-                  <!--INICIO IMG-->
-                  <li data-responsive="https://sachinchoolur.github.io/lightgallery.js/static/img/4-375.jpg 375, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4-480.jpg 480, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4.jpg 800"
-                     data-src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg"
-                     data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>">
-                     <a href="">
-                        <img class="img-responsive" style="width:300px; height:200px;"
-                           src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg">
-
-                        <div class="demo-gallery-poster">
-                           <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
-                        </div>
-                     </a>
-                  </li>
-                  <!--FIM IMG-->
-
-                  <!--INICIO IMG-->
-                  <li data-responsive="https://sachinchoolur.github.io/lightgallery.js/static/img/4-375.jpg 375, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4-480.jpg 480, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4.jpg 800"
-                     data-src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg"
-                     data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>">
-                     <a href="">
-                        <img class="img-responsive" style="width:300px; height:200px;"
-                           src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg">
-
-                        <div class="demo-gallery-poster">
-                           <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
-                        </div>
-                     </a>
-                  </li>
-                  <!--FIM IMG-->
-
-                  <!--INICIO IMG-->
-                  <li data-responsive="https://sachinchoolur.github.io/lightgallery.js/static/img/4-375.jpg 375, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4-480.jpg 480, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4.jpg 800"
-                     data-src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg"
-                     data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>">
-                     <a href="">
-                        <img class="img-responsive" style="width:300px; height:200px;"
-                           src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg">
-
-                        <div class="demo-gallery-poster">
-                           <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
-                        </div>
-                     </a>
-                  </li>
-                  <!--FIM IMG-->
-
-                  <!--INICIO IMG-->
-                  <li data-responsive="https://sachinchoolur.github.io/lightgallery.js/static/img/4-375.jpg 375, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4-480.jpg 480, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4.jpg 800"
-                     data-src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg"
-                     data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>">
-                     <a href="">
-                        <img class="img-responsive" style="width:300px; height:200px;"
-                           src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg">
-
-                        <div class="demo-gallery-poster">
-                           <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
-                        </div>
-                     </a>
-                  </li>
-                  <!--FIM IMG-->
-
-                  <!--INICIO IMG-->
-                  <li data-responsive="https://sachinchoolur.github.io/lightgallery.js/static/img/4-375.jpg 375, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4-480.jpg 480, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4.jpg 800"
-                     data-src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg"
-                     data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>">
-                     <a href="">
-                        <img class="img-responsive" style="width:300px; height:200px;"
-                           src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg">
-
-                        <div class="demo-gallery-poster">
-                           <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
-                        </div>
-                     </a>
-                  </li>
-                  <!--FIM IMG-->
-
-                  <!--INICIO IMG-->
-                  <li data-responsive="https://sachinchoolur.github.io/lightgallery.js/static/img/4-375.jpg 375, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4-480.jpg 480, 
-            https://sachinchoolur.github.io/lightgallery.js/static/img/4.jpg 800"
-                     data-src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg"
-                     data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>">
-                     <a href="">
-                        <img class="img-responsive" style="width:300px; height:200px;"
-                           src="https://blog.friasneto.com.br/wp-content/uploads/2020/07/piracicaba-casa-condominio-residencial-terras-de-artemis-artemis-23-11-2019_11-02-08-0.jpg">
-
-                        <div class="demo-gallery-poster">
-                           <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
-                        </div>
-                     </a>
-                  </li>
-                  <!--FIM IMG-->
-
             </div>
-
-
          </div>
-
-
          </ul>
       </div>
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <!-- end about -->
-
-
 
    <!--  footer -->
    <footer>
       <div class="footer">
-         <div class="container">
-            <div class="row">
-               <div class=" col-md-4">
-                  <h3>Contatos</h3>
-                  <ul class="conta">
-                     <li><i class="fa fa-map-marker" aria-hidden="true"></i>Rua José Simão Kfouri, 594</li>
-                     <li><i class="fa fa-mobile" aria-hidden="true"></i>16 997916890</li>
-                     <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#">demo@gmail.com</a></li>
-                  </ul>
-               </div>
-               <div class="col-md-4">
-                  <h3>Menu Link</h3>
-                  <ul class="link_menu">
-                     <li class="active"><a href="#">Home</a></li>
-                     <li><a href="about.html">Sobre</a></li>
-                     <li><a href="room.html">Contatos</a></li>
-                  </ul>
-               </div>
-               <div class="col-md-4">
-                  <ul class="social_icon">
-                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                     <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                     <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                  </ul>
-               </div>
-            </div>
+         <div class="container" id="_Footer">
          </div>
          <div class="copyright">
             <div class="container">
@@ -375,7 +222,6 @@
       }
 
       .btn {
-         -moz-user-select: none;
          background-image: none;
          border: 1px solid transparent;
          border-radius: 2px;
@@ -568,5 +414,4 @@
       lightGallery(document.getElementById('lightgallery'))
    </script>
 </body>
-
 </html>

@@ -18,7 +18,7 @@ namespace server.Utils
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, usuario.ToString()),
+                    new Claim(ClaimTypes.Name, usuario.ToString())
                 }),
 
                 Expires = DateTime.UtcNow.AddHours(2),

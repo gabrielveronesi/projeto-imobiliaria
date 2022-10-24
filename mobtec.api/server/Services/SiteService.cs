@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using server.Helpers;
-using server.Models.Entity;
 using server.Models.Inputs;
 using server.Models.OutPuts;
 using server.Repositories;
@@ -62,5 +60,24 @@ namespace server.Services
             return retorno;
         }
 
+        public async Task<List<OutSiteListarCasasFiltro>> ListarCasasFiltros(InSiteListarCasasFiltro entrada)
+        {
+            return await _siteRepository.ListarCasasFiltros(entrada);
+        }
+
+        public async Task<List<OutSiteListarCasasDestaque>> ListarCasasDestaque(string urlCliente)
+        {
+            return await _siteRepository.ListarCasasDestaque(urlCliente);
+        }
+
+        public async Task<List<OutSiteListarFotosCasa>> ListarFotosCasas(InSiteListarFotosCasa entrada)
+        {
+            return await _siteRepository.ListarFotosCasas(entrada);
+        }
+
+        public async Task<OutSiteConfiguracoesCasa> ListarConfiguracoesCasa(InSiteConfiguracoesCasa entrada)
+        {
+            return await _siteRepository.ListarConfiguracoesCasa(entrada);
+        }
     }
 }

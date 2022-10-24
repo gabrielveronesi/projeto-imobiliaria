@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace server.Models.Inputs
 {
-    public class InAtualizarCliente
+    public class InPainelAtualizarConfiguracoesGeral
     {
         ///<summary>
         /// Identificador do cliente
@@ -14,16 +14,6 @@ namespace server.Models.Inputs
         /// Nome do estabelecimento
         ///</summary>
         public string nomeComercial { get; set; }
-
-        ///<summary>
-        /// Nome do cliente contratante
-        ///</summary>
-        public string nomeCliente { get; set; } 
-
-        ///<summary>
-        /// Logo
-        ///</summary>
-        public string logo { get; set; } 
 
         ///<summary>
         /// Numero do WhatsApp
@@ -69,29 +59,5 @@ namespace server.Models.Inputs
         /// Twitter
         ///</summary>
         public string twitter { get; set; }
-
-        ///<summary>
-        /// Url do site do cliente
-        ///</summary>
-        public string urlCliente { get; set; }
-
-        ///<summary>
-        /// Usuario para logar no painel do cliente
-        ///</summary>
-        [Required]
-        public string usuario { get; set; }
-
-        ///<summary>
-        /// Senha para logar no painel do cliente
-        ///</summary>
-        [Required]
-        public string senha { get; set; }
-
-        ///<summary>
-        /// Flag [S - Ativo] / [N - Desativado]
-        ///</summary>
-        [Required]
-        public string snAtivo { get; set; }
-
     }
 }

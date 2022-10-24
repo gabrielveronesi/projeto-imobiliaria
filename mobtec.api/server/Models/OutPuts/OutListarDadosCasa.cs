@@ -51,5 +51,10 @@ namespace server.Models.OutPuts
         /// Oculto ou não
         ///</summary>
         public string oculto { get; set; }
+
+        ///<summary>
+        /// Imovel em destaque
+        ///</summary>
+        public string destaque { get; set; }
     }
 }

@@ -1,4 +1,7 @@
+using System;
 using System.Configuration;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -15,6 +18,7 @@ using server.Data;
 using server.Models.Entity;
 using server.Repositories;
 using server.Services;
+using server.Utils;
 
 namespace server
 {
@@ -59,6 +63,7 @@ namespace server
 
             //Configurando os usuarios autenticados
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<AuthenticatedUser>();
 
             services.AddCors();
             services.AddControllers();
@@ -66,11 +71,37 @@ namespace server
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "server", Version = "v1" });
-            });
 
-            // //Configurando os usuarios autenticados
-            // services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            // services.AddScoped<UsuarioAutenticado>();
+                // // Definindo o caminho de comentários para o Swagger.
+                // var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                // c.IncludeXmlComments(xmlPath);
+
+                // Include 'SecurityScheme' to use JWT Authentication
+                var jwtSecurityScheme = new OpenApiSecurityScheme
+                {
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    Name = "JWT Authentication",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Description = "Colocar apenas o token, sem o Bearer no início",
+
+                    Reference = new OpenApiReference
+                    {
+                        Id = JwtBearerDefaults.AuthenticationScheme,
+                        Type = ReferenceType.SecurityScheme
+                    }
+                };
+
+                c.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                { jwtSecurityScheme, Array.Empty<string>() }
+
+                });
+            });
 
             // //Configurando o JWT
             var key = Encoding.ASCII.GetBytes(Settings.Secret);

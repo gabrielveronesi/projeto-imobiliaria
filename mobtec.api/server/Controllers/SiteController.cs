@@ -37,5 +37,41 @@ namespace server.Controllers
         {
             return await _siteService.ListarCasas(entrada);
         }
+
+        /// <summary>
+        /// Listar as casas do cliente passando a url do cliente com os filtros 
+        /// </summary>
+        [HttpPost("listar-casas-filtro")]
+        public async Task<List<OutSiteListarCasasFiltro>> ListarCasasFiltros(InSiteListarCasasFiltro entrada)
+        {
+            return await _siteService.ListarCasasFiltros(entrada);
+        }
+
+        /// <summary>
+        /// Listar as casas em destque passando a url do cliente
+        /// </summary>
+        [HttpPost("listar-casas-destaque")]
+        public async Task<List<OutSiteListarCasasDestaque>> ListarCasasDestaque(string urlCliente)
+        {
+            return await _siteService.ListarCasasDestaque(urlCliente);
+        }
+
+        /// <summary>
+        /// Listar as fotos da casa
+        /// </summary>
+        [HttpPost("listar-fotos-casa")]
+        public async Task<List<OutSiteListarFotosCasa>> ListarFotosCasas(InSiteListarFotosCasa entrada)
+        {
+            return await _siteService.ListarFotosCasas(entrada);
+        }
+
+        /// <summary>
+        /// Listar configurações da casa
+        /// </summary>
+        [HttpPost("listar-configuracoes-casa")]
+        public async Task<OutSiteConfiguracoesCasa> ListarConfiguracoesCasa(InSiteConfiguracoesCasa entrada)
+        {
+            return await _siteService.ListarConfiguracoesCasa(entrada);
+        }
     }
 }

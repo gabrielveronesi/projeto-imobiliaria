@@ -64,5 +64,11 @@ namespace server.Models.Inputs
         [Required]
         public string oculto { get; set; }
 
+        ///<summary>
+        /// Imovel em destque
+        ///</summary>
+        [Required]
+        public string destaque { get; set; }
+
     }
 }

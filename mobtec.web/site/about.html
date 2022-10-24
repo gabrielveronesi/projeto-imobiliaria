@@ -13,6 +13,13 @@
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
+
+   <!--Axios-->
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
    <!-- bootstrap css -->
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <!-- style css -->
@@ -30,6 +37,7 @@
    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   <script src="about.js"></script>
 </head>
 <!-- body -->
 
@@ -48,8 +56,8 @@
                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                   <div class="full">
                      <div class="center-desk">
-                        <div class="logo" style="width:150px;">
-                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                        <div class="logo">
+                           <div class="logo" id="Logo"></div>
                         </div>
                      </div>
                   </div>
@@ -60,20 +68,25 @@
                         aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                      </button>
+                     <!--NavBar Personalizado-->
                      <div class="collapse navbar-collapse" id="navbarsExample04">
-                        <ul class="navbar-nav mr-auto">
-                           <li class="nav-item">
-                              <a class="nav-link" href="index.html">Home</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link active" href="about.html">Sobre</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="contact.html">Contato</a>
-                           </li>
-                           </li>
-                        </ul>
+                        <script>
+                           document.getElementById("navbarsExample04").innerHTML +=
+                              '<ul class="navbar-nav mr-auto">' +
+                              '<li class="nav-item">' +
+                              '<a class="nav-link" href="index.html?' + clienteUrl + '">Home</a>' +
+                              '</li>' +
+                              '<li class="nav-item active">' +
+                              '<a class="nav-link" href="about.html?' + clienteUrl + '">Sobre</a>' +
+                              '</li>' +
+                              '<li class="nav-item">' +
+                              '<a class="nav-link" href="contact.html?' + clienteUrl + '">Contato</a>' +
+                              '</li>' +
+                              '</li>' +
+                              '</ul>';
+                        </script>
                      </div>
+                     <!--Fim - NavBar Personalizado-->
                   </nav>
                </div>
             </div>
@@ -98,16 +111,12 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-5">
-               <div class="titlepage">
-                  <p class="margin_0">A IMOBILIÁRIA CONQUISTA iniciou suas atividades em Abril / 2016 visando construir a sua história no mercado imobiliário de Matão/SP, de forma sólida, confiável e duradoura.
-
-                     Trata-se de uma imobiliária atuante no mercado, tendo em seus proprietários um histórico íntegro, ético e priofissional. 
-                     </p>
+               <div class="titlepage" id="descricaoSobre">
                </div>
             </div>
             <div class="col-md-7">
-               <div class="about_img">
-                  <figure><img src="https://www.villeimobiliarias.com.br/wp-content/uploads/2021/05/fachada-2.jpg" alt="#" /></figure>
+               <div class="about_img" id="bannerSobre">
+                  
                </div>
             </div>
          </div>
@@ -117,33 +126,7 @@
    <!--  footer -->
    <footer>
       <div class="footer">
-         <div class="container">
-            <div class="row">
-               <div class=" col-md-4">
-                  <h3>Contatos</h3>
-                  <ul class="conta">
-                     <li><i class="fa fa-map-marker" aria-hidden="true"></i>Rua José Simão Kfouri, 594</li>
-                     <li><i class="fa fa-mobile" aria-hidden="true"></i>16 997916890</li>
-                     <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#">demo@gmail.com</a></li>
-                  </ul>
-               </div>
-               <div class="col-md-4">
-                  <h3>Menu Link</h3>
-                  <ul class="link_menu">
-                     <li class="active"><a href="#">Home</a></li>
-                     <li><a href="about.html">Sobre</a></li>
-                     <li><a href="room.html">Contatos</a></li>
-                  </ul>
-               </div>
-               <div class="col-md-4">
-                  <ul class="social_icon">
-                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                     <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                     <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                  </ul>
-               </div>
-            </div>
+         <div class="container" id="_Footer">
          </div>
          <div class="copyright">
             <div class="container">

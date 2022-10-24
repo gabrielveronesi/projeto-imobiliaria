@@ -1,1 +1,0 @@
--- Validar todas as entradas de atualização e cadastro do front end
