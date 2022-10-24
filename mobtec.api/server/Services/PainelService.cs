@@ -38,6 +38,7 @@ namespace server.Services
             casa.descricao = entrada.descricao;
             casa.valor = entrada.valor;
             casa.oculto = "N";
+            casa.destaque = entrada.destaque;
 
             return await _painelRepository.CadastrarCasa(casa);
         }
@@ -110,6 +111,27 @@ namespace server.Services
         public async Task<OutListarDadosClientePainel> ListarConfiguracoes(InListarDadosClientePainel entrada)
         {
             return await _painelRepository.ListarConfiguracoes(entrada);
+        }
+
+        public async Task<OutCadastrarFoto> CadastrarFoto(InCadastrarFoto entrada)
+        {
+            var urlFoto = "https://resizedimgs.zapimoveis.com.br/crop/420x236/named.images.sp/c47751d0300cdf13c2f686c35d7de1c7/casa-com-2-quartos-a-venda-44m-no-nova-matao-matao.jpg";
+            return await _painelRepository.CadastrarFoto(entrada, urlFoto);
+        }
+
+        public async Task<List<OutListarFotos>> ListarFotos(InListarFotos entrada)
+        {
+            return await _painelRepository.ListarFotos(entrada);
+        }
+
+        public async Task<OutDeletarFoto> ExcluirFoto(int idFoto)
+        {
+            return await _painelRepository.ExcluirFoto(idFoto);
+        }
+
+        public async Task<OutPainelAtualizarConfiguracoesGeral> AtualizarConfiguracoesGeral(InPainelAtualizarConfiguracoesGeral entrada)
+        {
+            return await _painelRepository.AtualizarConfiguracoesGeral(entrada);
         }
     }
 }

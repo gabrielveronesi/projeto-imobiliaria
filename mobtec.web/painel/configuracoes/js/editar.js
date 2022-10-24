@@ -13,23 +13,21 @@ function sair() {
 
 
 var urlListaConfig = 'https://localhost:5001/painel/listar-configuracoes';
+axios.post(urlListaConfig, {
 
+  idCliente: localStorage.getItem("idCliente")
 
-axios.post(urlListaConfig, { 
+})
+  .then(response => {
 
-      idCliente: localStorage.getItem("idCliente") 
-      
-    })
-     .then(response => {
-
-      var _config = response.data;
+    var _config = response.data;
 
     //#atualizaNomeComercial
     document.getElementById("atualizaNomeComercial").innerHTML = '<div class="input-group mb-3">' +
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">Nome Comercial</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.nomeComercial + '" placeholder="' + _config.nomeComercial + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaNomeComercial" value="' + _config.nomeComercial + '" placeholder="' + _config.nomeComercial + '" required maxlength="40">' +
       '</div>'
 
     //#atualizaWhatsApp
@@ -37,7 +35,7 @@ axios.post(urlListaConfig, {
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">WhatsApp</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.whatsApp + '" placeholder="' + _config.whatsApp + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaWhatsApp" value="' + _config.whatsApp + '" placeholder="' + _config.whatsApp + '" required maxlength="40">' +
       '</div>'
 
     //#atualizaTelefone
@@ -45,7 +43,7 @@ axios.post(urlListaConfig, {
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">Telefone</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.telefone + '" placeholder="' + _config.telefone + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaTelefone" value="' + _config.telefone + '" placeholder="' + _config.telefone + '" required maxlength="40">' +
       '</div>'
 
     //#atualizaEmail
@@ -53,7 +51,7 @@ axios.post(urlListaConfig, {
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">Email</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.email + '" placeholder="' + _config.email + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaEmail" value="' + _config.email + '" placeholder="' + _config.email + '" required maxlength="40">' +
       '</div>'
 
     //#atualizaEndereco
@@ -61,15 +59,15 @@ axios.post(urlListaConfig, {
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">Endereco</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.endereco + '" placeholder="' + _config.endereco + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaEndereco" value="' + _config.endereco + '" placeholder="' + _config.endereco + '" required maxlength="40">' +
       '</div>'
-    
+
     //#atualizaFacebook
     document.getElementById("atualizaFacebook").innerHTML = '<div class="input-group mb-3">' +
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">Facebook</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.facebook + '" placeholder="' + _config.facebook + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaFacebook" value="' + _config.facebook + '" placeholder="' + _config.facebook + '">' +
       '</div>'
 
     //#atualizaInstagram
@@ -77,7 +75,7 @@ axios.post(urlListaConfig, {
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">Instagram</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.instagram + '" placeholder="' + _config.instagram + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaInstagram" value="' + _config.instagram + '" placeholder="' + _config.instagram + '" >' +
       '</div>'
 
     //#atualizaLinkedin
@@ -85,7 +83,7 @@ axios.post(urlListaConfig, {
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">Linkedin</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.linkedin + '" placeholder="' + _config.linkedin + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaLinkedin" value="' + _config.linkedin + '" placeholder="' + _config.linkedin + '">' +
       '</div>'
 
     //#atualizaYoutube
@@ -93,15 +91,7 @@ axios.post(urlListaConfig, {
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">Youtube</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.youtube + '" placeholder="' + _config.youtube + '" required maxlength="40">' +
-      '</div>'
-
-    //#atualizaYoutube
-    document.getElementById("atualizaYoutube").innerHTML = '<div class="input-group mb-3">' +
-      '<div class="input-group-prepend">' +
-      '<span class="input-group-text" id="basic-addon1">Youtube</span>' +
-      '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.youtube + '" placeholder="' + _config.youtube + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaYoutube" value="' + _config.youtube + '" placeholder="' + _config.youtube + '" >' +
       '</div>'
 
     //#atualizaTwitter
@@ -109,138 +99,61 @@ axios.post(urlListaConfig, {
       '<div class="input-group-prepend">' +
       '<span class="input-group-text" id="basic-addon1">Twitter</span>' +
       '</div>' +
-      '<input type="text" class="form-control" id="inputNome" value="' + _config.twitter + '" placeholder="' + _config.twitter + '" required maxlength="40">' +
+      '<input type="text" class="form-control" id="inputAtualizaTwitter" value="' + _config.twitter + '" placeholder="' + _config.twitter + '">' +
       '</div>'
 
+  })
+  .catch(error => {
+    alert(error)
+  })
 
+
+let getToken = localStorage.getItem("token")
+
+const auth = {
+  headers: { Authorization: `Bearer ${getToken}` }
+};
+
+function salvarConfiguracoes() {
+
+  let atualizaNomeComercial = document.querySelector('#inputAtualizaNomeComercial').value;
+  let atualizaWhatsApp = document.querySelector('#inputAtualizaWhatsApp').value;
+  let atualizaTelefone = document.querySelector('#inputAtualizaTelefone').value;
+  let atualizaEmail = document.querySelector('#inputAtualizaEmail').value;
+  let atualizaEndereco = document.querySelector('#inputAtualizaEndereco').value;
+  let atualizaFacebook = document.querySelector('#inputAtualizaFacebook').value;
+  let atualizaInstagram = document.querySelector('#inputAtualizaInstagram').value;
+  let atualizaLinkedin = document.querySelector('#inputAtualizaLinkedin').value;
+  let atualizaYoutube = document.querySelector('#inputAtualizaYoutube').value;
+  let atualizaTwitter = document.querySelector('#inputAtualizaTwitter').value;
+
+  let urlAdicionar = 'https://localhost:5001/painel/atualizar-configuracoes-geral'
+  axios.post(urlAdicionar, {
+    idCliente: localStorage.getItem("idCliente"),
+    nomeComercial: atualizaNomeComercial,
+    whatsApp: atualizaWhatsApp,
+    telefone: atualizaTelefone,
+    email: atualizaEmail,
+    endereco: atualizaEndereco,
+    facebook: atualizaFacebook,
+    instagram: atualizaInstagram,
+    linkedin: atualizaLinkedin,
+    youtube: atualizaYoutube,
+    twitter: atualizaTwitter
+
+  }, auth)
+    .then(response => {
+      alert(response.data.mensagem)
     })
     .catch(error => {
+      if (error.response.status == 401) {
+        alert("Sua sessão expirou, faça o login novamente!")
+        localStorage.removeItem("token");
+        window.location.href = "../logar.html";
+      } else {
         alert(error)
-    })
-  
+      }
+    });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let getToken = localStorage.getItem("token")
-// let getEmail = localStorage.getItem("user")
- 
-// const auth = {
-//   headers: { Authorization: `Bearer ${getToken}` }
-// };
-
-// axios.get(urlListaConfig, auth)
-//   .then(function (response) {
-
-//     var json   = response.data;
-//     var _result = json.data.value;
-
-//     //#Atualiza Nome
-//     document.getElementById("atualizaNome").innerHTML = '<div class="input-group mb-3">' +
-//       '<div class="input-group-prepend">' +
-//       '<span class="input-group-text" id="basic-addon1">Nome</span>' +
-//       '</div>' +
-//       '<input type="text" class="form-control" id="inputNome" value="' + _result.nome + '" placeholder="' + result.nome + '" required maxlength="40">' +
-//       '</div>'
-
-//     //#Atualiza Sobre
-//     document.getElementById("atualizaSobre").innerHTML = '<div class="input-group">' +
-//       '<div class="input-group-prepend">' +
-//       '<span class="input-group-text">Sobre</span>' +
-//       '</div>' +
-//       '<textarea class="form-control" id="inputSobre" aria-label="Com textarea" maxlength="500">' + _result.sobre + '</textarea>' +
-//       '</div>'
-
-//     //#Atualiza Texto - Rodapé
-//     document.getElementById("atualizaTexto").innerHTML = '<div class="input-group">' +
-//       '<div class="input-group-prepend">' +
-//       '<span class="input-group-text">Rodapé</span>' +
-//       '</div>' +
-//       '<textarea class="form-control" id="inputTexto" aria-label="Com textarea" maxlength="100">' + _result.texto + '</textarea>' +
-//       '</div>'
-
-//     //#Atualiza Contatos
-//     document.getElementById("atualizaContatos").innerHTML =
-//       //Facebook
-//       '<div class="input-group mb-3">' +
-//       '<div class="input-group-prepend">' +
-//       '<span class="input-group-text" id="basic-addon3">Facebook&nbsp;</span>' +
-//       '</div>' +
-//       '<input type="text" class="form-control" id="inputFacebook" aria-describedby="basic-addon3" value="' + _result.facebook + '" placeholder="' + _result.facebook + '" maxlength="100">' +
-//       '</div>' +
-//       //Instagram
-//       '<div class="input-group mb-3">' +
-//       '<div class="input-group-prepend">' +
-//       '<span class="input-group-text" id="basic-addon3">Instagram</span>' +
-//       '</div>' +
-//       '<input type="text" class="form-control" id="inputInstagram" aria-describedby="basic-addon3" value="' + _result.instagram + '" placeholder="' + _result.instagram + '" maxlength="100">' +
-//       '</div>' +
-//       //WhatsApp
-//       '<div class="input-group mb-3">' +
-//       '<div class="input-group-prepend">' +
-//       '<span class="input-group-text" id="basic-addon3">WhatsApp</span>' +
-//       '</div>' +
-//       '<input type="number" class="form-control" id="inputWhatsapp" aria-describedby="basic-addon3" value="' + result.whatsApp + '" placeholder="' + result.whatsApp + '" maxlength="100">' +
-//       '</div>'
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   })
-//   .finally(function () {
-//     // sempre executado
-//   });
-
-// function salvarConfiguracoes() {
-
-//   let nome = document.querySelector('#inputNome').value
-//   let sobre = document.querySelector('#inputSobre').value
-//   let texto = document.querySelector('#inputTexto').value
-//   let facebook = document.querySelector('#inputFacebook').value
-//   let instagram = document.querySelector('#inputInstagram').value
-//   let whatsapp = document.querySelector('#inputWhatsapp').value
-
-//   let urlAtualizarConfigs = 'https://localhost:5001/painel-adm/adicionar-configuracoes?emailCliente=' + getEmail;
-
-//   let body = {
-//     nome: nome,
-//     sobre: sobre,
-//     texto: texto,
-//     facebook: facebook,
-//     instagram: instagram,
-//     whatsApp: whatsapp
-//   };
-
-//   axios.post(urlAtualizarConfigs, body, {
-//     headers: { Authorization: `Bearer ${getToken}` }
-//   })
-//     .catch(function (error) {
-//       window.location.href = "../logar.html";
-//     })
-//     .finally(function () {
-//       // sempre executado
-//     });
-    
-//   alert("Configurações atualizadas!")
-//   location.reload();
-
-// }
+  location.reload();
+}

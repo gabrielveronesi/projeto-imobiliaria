@@ -66,5 +66,11 @@ namespace server.Models.Entity
         [Required]
         public string oculto { get; set; }
 
+        ///<summary>
+        /// Destaque
+        ///</summary>
+        [Required]
+        public string destaque { get; set; }
+
     }
 }

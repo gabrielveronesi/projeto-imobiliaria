@@ -57,6 +57,19 @@ function listarDadosCasa() {
             '<option>' + opc2 + '</option>' +
             '</select>'
 
+            console.log(dados.destaque)
+        //destacado?
+        if (dados.destaque == 'N') {
+            document.getElementById("atualizaDestaque").innerHTML =
+                '<input type="checkbox" class="form-check-input" id="destaque">' +
+                '<label class="form-check-label" for="exampleCheck1">Imóvel em destaque</label>';
+        } else {
+            document.getElementById("atualizaDestaque").innerHTML =
+                '<input type="checkbox" class="form-check-input" id="destaque" checked>' +
+                '<label class="form-check-label" for="exampleCheck1">Imóvel em destaque</label>';
+        }
+
+
         document.getElementById("botoes").innerHTML = '<button type="button" onclick=atualizar(' + getIdCasa + ') class="btn btn-success btn-lg btn-block"> Atualizar Imóvel </button>' +
             '<button type="button" onclick=atualizarFotos() class="btn btn-primary btn-lg btn-block"> Editar Fotos </button>' +
             '<button type="button" onclick=ocultar(' + getIdCasa + ') class="btn btn-warning btn-lg btn-block"> Ocultar Imóvel </button>' +
@@ -80,13 +93,20 @@ function atualizar(casaId) {
     let cidade = document.querySelector('#inputCidade').value
     let descricao = document.querySelector('#inputDescricao').value
     let finalidade = document.querySelector('#inputFinalidade').value
+    let checkboxDestaque = document.getElementById('destaque');
 
-     //#region tratando o valor
-     let valor = document.querySelector('#inputValor').value
-     valor = valor.replace(',','');
-     valor = valor.replace('.','');
-     var valorConvertido = parseInt(valor);
-     //#endregion tratando o valor
+    if (checkboxDestaque.checked) {
+        checkboxDestaque = 'S'
+    } else {
+        checkboxDestaque = 'N'
+    }
+
+    //#region tratando o valor
+    let valor = document.querySelector('#inputValor').value
+    valor = valor.replace(',', '');
+    valor = valor.replace('.', '');
+    var valorConvertido = parseInt(valor);
+    //#endregion tratando o valor
 
     let urlAtualizarImovel = 'https://localhost:5001/painel/atualizar-casa'
     let body = {
@@ -99,7 +119,8 @@ function atualizar(casaId) {
         tipo: finalidade,
         descricao: descricao,
         valor: valorConvertido,
-        oculto: "N"
+        oculto: "N",
+        destaque: checkboxDestaque
     };
 
     axios.put(urlAtualizarImovel, body, {
@@ -184,17 +205,15 @@ function sair() {
 
 function formatarMoeda(input) {
 
-    if (input == null)
-    {
+    if (input == null) {
         var elemento = document.getElementById('inputValor');
         var valor = elemento.value;
     }
-    else
-    {
+    else {
         var elemento = input;
         var valor = input;
     }
-    
+
     valor = valor + '';
     valor = parseInt(valor.replace(/[\D]+/g, ''));
     valor = valor + '';
@@ -205,7 +224,7 @@ function formatarMoeda(input) {
     }
 
     elemento.value = valor;
-    if(valor == 'NaN') elemento.value = '';
+    if (valor == 'NaN') elemento.value = '';
 
     return valor;
 }

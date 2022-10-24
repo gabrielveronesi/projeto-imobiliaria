@@ -1,15 +1,15 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace server.Models.Entity
+namespace server.Models.Inputs
 {
-    public class Foto
+    public class InCadastrarFoto
     {
         ///<summary>
-        /// Identificador da foto
+        /// Foto
         ///</summary>
         [Required]
-        [Key]
-        public int idFoto { get; set; }
+        public string Foto { get; set; }
 
         ///<summary>
         /// Identificador da casa
@@ -20,10 +20,5 @@ namespace server.Models.Entity
         /// Identificador do cliente
         ///</summary>
         public int idCliente { get; set; }
-
-        ///<summary>
-        /// Url da imagem
-        ///</summary>
-        public string urlFoto { get; set; }
     }
 }

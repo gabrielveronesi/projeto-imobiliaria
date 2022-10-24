@@ -15,37 +15,37 @@ namespace server.Models.OutPuts
         ///<summary>
         /// Nome do cliente contratante
         ///</summary>
-        public string nomeCliente { get; set; } 
+        public string nomeCliente { get; set; }
 
         ///<summary>
         /// Logo
         ///</summary>
-        public string logo { get; set; } 
+        public string logo { get; set; }
 
         ///<summary>
         /// Numero do WhatsApp
         ///</summary>
-        public string whatsApp { get; set; } 
+        public string whatsApp { get; set; }
 
         ///<summary>
         /// Telefone
         ///</summary>
-        public string telefone { get; set; } 
+        public string telefone { get; set; }
 
         ///<summary>
         /// Email
         ///</summary>
-        public string email { get; set; } 
+        public string email { get; set; }
 
         ///<summary>
         /// Endereco do estabelecimento
         ///</summary>
-        public string endereco { get; set; } 
+        public string endereco { get; set; }
 
         ///<summary>
         /// Url Facebook
         ///</summary>
-        public string facebook { get; set; } 
+        public string facebook { get; set; }
 
         ///<summary>
         /// Instagram
@@ -55,7 +55,7 @@ namespace server.Models.OutPuts
         ///<summary>
         /// Linkedin
         ///</summary>
-        public string linkedin { get; set; } 
+        public string linkedin { get; set; }
 
         ///<summary>
         /// Youtube
@@ -91,6 +91,16 @@ namespace server.Models.OutPuts
         /// Banner 03
         ///</summary>
         public string banner03 { get; set; }
-        
+
+        ///<summary>
+        /// Banner da pagina sobre
+        ///</summary>
+        public string bannerSobre { get; set; }
+
+        ///<summary>
+        /// Descricao da pagina sobre
+        ///</summary>
+        public string descricaoSobre { get; set; }
+
     }
 }

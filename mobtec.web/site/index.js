@@ -2,10 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 let text = urlParams.toString();
 let clienteUrl = text.replace("=", "");
 localStorage.setItem("clienteUrl", clienteUrl);
-
-//ListarConfigurações
-var urlListarConfiguracao = 'https://localhost:5001/site/listar-configuracoes/' + clienteUrl;
-
+let clienteWhatsapp = "";
 let getBuscaSite = localStorage.getItem("buscaSite")
 let getPaginaNumeroSite = localStorage.getItem("paginaNumeroSite")
 
@@ -13,6 +10,7 @@ if (getPaginaNumeroSite == null) {
     getPaginaNumeroSite = 1
 }
 
+var urlListarConfiguracao = 'https://localhost:5001/site/listar-configuracoes/' + clienteUrl;
 axios.get(urlListarConfiguracao)
     .then(function (configuracoes) {
 
@@ -38,8 +36,10 @@ axios.get(urlListarConfiguracao)
             banner03 = '../site/images/banner3.jpg'
         else banner03 = _configuracoes.banner03
 
+        clienteWhatsapp = _configuracoes.whatsApp
 
-        document.getElementById("Logo").innerHTML = '<a href=""><img width="80" height="80" src=" ' + _configuracoes.logo + ' " alt="#" /></a>';
+
+        document.getElementById("Logo").innerHTML = '<a href="index.html?' + clienteUrl + '"><img style="width:150px" src=" ' + _configuracoes.logo + ' " alt="#" /></a>';
         document.getElementById("Carrossel").innerHTML =
             '<div class="carousel-inner">' +
             '<div class="carousel-item active">' +
@@ -63,9 +63,9 @@ axios.get(urlListarConfiguracao)
             '<div class="col-md-4">' +
             '<h3>Menu Link</h3>' +
             '<ul class="link_menu">' +
-            '<li class="active"><a href="#">Home</a></li>' +
-            '<li><a href="about.html">Sobre</a></li>' +
-            '<li><a href="room.html">Contatos</a></li>' +
+            '<li><a href="index.html?' + clienteUrl + '">Home</a></li>' + 
+            '<li><a href="about.html?' + clienteUrl + '">Sobre</a></li>' +
+            '<li><a href="contact.html?' + clienteUrl + '">Contato</a></li>' +
             '</ul>' +
             '</div>' +
             '<div class="col-md-4">' +
@@ -77,12 +77,10 @@ axios.get(urlListarConfiguracao)
             '</ul>' +
             '</div>' +
             '</div>';
-
-
-
     })
     .catch(function (error) {
         console.log(error);
+        window.location.href = 'error.html'
     })
     .finally(function () {
         // sempre executado
@@ -101,26 +99,25 @@ axios.post(urlListarCasas, {
 
 })
     .then(response => {
-
         let tableText = "";
         let totalPaginas = 0;
         let paginacao = "";
-
         let json = response.data;
+
         json.forEach((casas) => {
 
             tableText +=
                 '<div class="col-md-4 col-sm-6">' +
                 '<div id="serv_hover" class="room">' +
                 '<div class="room_img">' +
-                '<a href="apresentacao.html">' +
+                '<a href="apresentacao.html?' + clienteUrl + '&casa=' + casas.idCasa + '">' +
                 '<figure><img src="images/blog2.jpg" alt="about.html" /></figure>' +
                 '</a>' +
                 '</div>' +
                 '<div class="bed_room">' +
                 '<h1>' + casas.titulo + '</h1>' +
                 '<p>' + casas.pequenaDescricao + '</p>' +
-                '<p3> Referencia:' + casas.idCasa + '</p3>' +
+                '<p3> Referencia: ' + casas.idCasa + '</p3>' +
                 '<br>' +
                 '<strong>' +
                 '<p>R$' + formatarMoeda(casas.valor) + '</p>' +
@@ -149,6 +146,55 @@ axios.post(urlListarCasas, {
     })
     .catch(function (error) {
         console.log(error);
+        window.location.href = 'error.html'
+    })
+    .finally(function () {
+        // sempre executado
+    });
+
+
+var urlListarCasasDestaque = 'https://localhost:5001/site/listar-casas-destaque?urlCliente=' + clienteUrl;
+axios.post(urlListarCasasDestaque, {})
+    .then(response => {
+
+        let tableText = "";
+        let json = response.data;
+
+        json.forEach((casasDestaque) => {
+            tableText +=
+                '<div class="container">' +
+                '<div class="row">' +
+                '<div class="col-md-12">' +
+                '<div class="titlepage">' +
+                '<h2>Imóveis em destaque</h2>' +
+                '<p>Confira algum dos nossos imóveis em destaque.</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="row">' +
+                '<div class="col-md-4">' +
+                '<div class="blog_box">' +
+                '<div class="blog_img">' +
+                '<a href="apresentacao.html?' + clienteUrl + '&casa=' + casasDestaque.idCasa + '">' +
+                '<figure><img src="images/blog1.jpg" alt="#" /></figure>' +
+                '</div>' +
+                ' <div class="blog_room">' +
+                ' <h3>' + casasDestaque.titulo + '</h3>' +
+                ' <span>R$' + formatarMoeda(casasDestaque.valor) + '</span>' +
+                '<p>' + casasDestaque.pequenaDescricao + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+        })
+
+        document.getElementById("ListaCasasDestaque").innerHTML = tableText
+
+    })
+    .catch(function (error) {
+        console.log(error);
+        window.location.href = 'error.html'
     })
     .finally(function () {
         // sempre executado
@@ -185,3 +231,30 @@ function mudarPagina(numeroPagina) {
     location.reload();
 }
 
+function buscarCasaFiltro() {
+    //localStorage.setItem("paginaNumeroSite", numeroPagina);
+    var finalidade = document.querySelector('#filtroFinalidade').value
+    var cidade = document.querySelector('#filtroCidade').value
+    var endereco = document.querySelector('#filtroEndereco').value
+
+    window.location.href = 'casas.html?' + clienteUrl + '&finalidade=' + finalidade + '&cidade=' + cidade + '&endereco=' + endereco
+
+}
+
+function enviarMensagem() {
+    let inputNome = document.querySelector('#inputNome').value
+    let inputEmail = document.querySelector('#inputEmail').value
+    let inputTelefone = document.querySelector('#inputTelefone').value
+    let inputMensagem = document.querySelector('#inputMensagem').value
+
+    clienteWhatsapp = clienteWhatsapp.replace('(', '');
+    clienteWhatsapp = clienteWhatsapp.replace(')', '');
+    clienteWhatsapp = clienteWhatsapp.replace('-', '');
+    clienteWhatsapp = clienteWhatsapp.replace(' ', '');
+    clienteWhatsapp = clienteWhatsapp.replace('  ', '');
+
+    let mensagem = ' ' + inputMensagem + ' Meu celular: ' + inputTelefone + ' E-mail: ' + inputEmail + ' Nome: ' + inputNome
+    mensagem = mensagem.replace(' ', '%20')
+
+    window.location.href = 'https://api.whatsapp.com/send?phone=+55' + clienteWhatsapp + '&text=' + mensagem;
+}

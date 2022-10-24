@@ -109,6 +109,16 @@ namespace server.Models.Entity
         /// Banner 03
         ///</summary>
         public string banner03 { get; set; }
+
+        ///<summary>
+        /// Banner da pagina sobre
+        ///</summary>
+        public string bannerSobre { get; set; }
+
+        ///<summary>
+        /// Descricao da pagina sobre
+        ///</summary>
+        public string descricaoSobre { get; set; }
         
     }
 }

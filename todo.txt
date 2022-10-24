@@ -1,0 +1,5 @@
+-- Validar todas as entradas de atualização e cadastro do front end
+-- Excluir todas as fotos quando excluir a casa
+-- Ajustar nome dos modelos para InSiteListarFotosCasa InPainelListarFotosCasa
+-- Colocar o id no token e validar nos metodos
+-- Arrumar as urls

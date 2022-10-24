@@ -33,7 +33,7 @@
    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
-   <script src="index.js"></script>
+   <script src="casas.js"></script>
 
 </head>
 <!-- body -->
@@ -70,7 +70,7 @@
                         <script>
                            document.getElementById("navbarsExample04").innerHTML +=
                               '<ul class="navbar-nav mr-auto">' +
-                              '<li class="nav-item active">' +
+                              '<li class="nav-item ">' +
                               '<a class="nav-link" href="index.html?' + clienteUrl + '">Home</a>' +
                               '</li>' +
                               '<li class="nav-item">' +
@@ -92,58 +92,7 @@
    </header>
    <!-- end header inner -->
    <!-- end header -->
-   <!-- banner -->
-   <br>
-   <section class="container">
-      <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
-         <div id="Carrossel"></div>
-         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-         </a>
-         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-         </a>
-
-         <div class="booking_ocline">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-5">
-                     <div class="book_room">
-                        <h1>Buscar Imóvel</h1>
-                        <div class="book_now">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <span>Finalidade</span>
-                                 <select class="online_book" placeholder="" id="filtroFinalidade">
-                                    <option value="Venda">Venda</option>
-                                    <option value="Locação">Locação</option>
-                                 </select>
-                              </div>
-                              <div class="col-md-12">
-                                 <span>Cidade</span>
-                                 <input class="online_book" placeholder="" type="text" id="filtroCidade">
-                              </div>
-                              <div class="col-md-12">
-                                 <span>Endereço</span>
-                                 <input class="online_book" placeholder="" type="text" id="filtroEndereco">    
-                                 </select>
-                              </div>
-                              <div class="col-md-12">
-                                 <button class="book_btn" onclick="buscarCasaFiltro()">Pesquisar</button>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <!-- end banner -->
-   <!-- end about -->
+   
    <!-- our_room -->
    <div class="our_room">
       <div class="container">
@@ -164,53 +113,10 @@
    </div>
    <!-- end our_room -->
 
-   <!-- end gallery -->
-   <!-- blog -->
-   <div class="blog" style="width:100%" id="ListaCasasDestaque">
-     
-   </div>
-   <!-- end blog -->
-   <!--  contact -->
-   <div class="contact">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="titlepage">
-                  <h2>Contato</h2>
-               </div>
-            </div>
-         </div>
-         <div class="row">
-
-            <div id="request" class="main_form">
-               <div class="row">
-                  <div class="col-md-12 ">
-                     <input class="contactus" placeholder="Nome" type="type" id="inputNome" name="Name">
-                  </div>
-                  <div class="col-md-12">
-                     <input class="contactus" placeholder="Email" type="type" id="inputEmail" name="Email">
-                  </div>
-                  <div class="col-md-12">
-                     <input class="contactus" placeholder="Numero de Telefone" id="inputTelefone" type="type" name="Phone Number">
-                  </div>
-                  <div class="col-md-12">
-                     <textarea class="textarea" placeholder="Mensagem" type="type" id="inputMensagem" Message="Name">Mensagem</textarea>
-                  </div>
-                  <div class="col-md-12">
-                     <button class="send_btn" onclick="enviarMensagem()">Enviar</button>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <script src="index.js"></script>
-   <!-- end contact -->
    <!--  footer -->
    <footer>
       <div class="footer">
          <div class="container" id="_Footer">
-
          </div>
          <div class="copyright">
             <div class="container">
