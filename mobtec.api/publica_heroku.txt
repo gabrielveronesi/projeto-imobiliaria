@@ -1,4 +1,4 @@
-https://localhost:5001/api/Teste
+https://mobtec-server-teste.herokuapp.com/api/Teste
 
 [sempre]
 docker build --rm -f "Dockerfile" -t "server:latest" .

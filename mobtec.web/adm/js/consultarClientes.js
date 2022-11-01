@@ -1,4 +1,4 @@
-let _urlListaClientes = 'https://localhost:5001/adm/listar-clientes';
+let _urlListaClientes = 'https://mobtec-server-teste.herokuapp.com/adm/listar-clientes';
 
 function listarClientes() {
 

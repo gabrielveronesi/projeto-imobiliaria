@@ -12,7 +12,7 @@ function sair() {
 }
 
 
-var urlListaConfig = 'https://localhost:5001/painel/listar-configuracoes';
+var urlListaConfig = 'https://mobtec-server-teste.herokuapp.com/painel/listar-configuracoes';
 axios.post(urlListaConfig, {
 
   idCliente: localStorage.getItem("idCliente")
@@ -127,7 +127,7 @@ function salvarConfiguracoes() {
   let atualizaYoutube = document.querySelector('#inputAtualizaYoutube').value;
   let atualizaTwitter = document.querySelector('#inputAtualizaTwitter').value;
 
-  let urlAdicionar = 'https://localhost:5001/painel/atualizar-configuracoes-geral'
+  let urlAdicionar = 'https://mobtec-server-teste.herokuapp.com/painel/atualizar-configuracoes-geral'
   axios.post(urlAdicionar, {
     idCliente: localStorage.getItem("idCliente"),
     nomeComercial: atualizaNomeComercial,

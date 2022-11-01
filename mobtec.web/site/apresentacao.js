@@ -6,7 +6,7 @@ let tituloCasa = "";
 
 
 //ListarConfigurações
-var urlListarConfiguracao = 'https://localhost:5001/site/listar-configuracoes/' + clienteUrl;
+var urlListarConfiguracao = 'https://mobtec-server-teste.herokuapp.com/site/listar-configuracoes/' + clienteUrl;
 
 axios.get(urlListarConfiguracao)
     .then(function (configuracoes) {
@@ -60,7 +60,7 @@ axios.get(urlListarConfiguracao)
     });
 
 
-let urlConfiguracoesCasa = 'https://localhost:5001/site/listar-configuracoes-casa'
+let urlConfiguracoesCasa = 'https://mobtec-server-teste.herokuapp.com/site/listar-configuracoes-casa'
 axios.post(urlConfiguracoesCasa, {
 
     //Body
@@ -91,7 +91,7 @@ axios.post(urlConfiguracoesCasa, {
         alert(error)
     })
 
-let urlListaImagensDaCasa = 'https://localhost:5001/site/listar-fotos-casa'
+let urlListaImagensDaCasa = 'https://mobtec-server-teste.herokuapp.com/site/listar-fotos-casa'
 axios.post(urlListaImagensDaCasa, {
 
     //Body

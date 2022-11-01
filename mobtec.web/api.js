@@ -1,3 +1,3 @@
-const url = "https://localhost:5001/";
+const url = "https://mobtec-server-teste.herokuapp.com/";
 
 export { url };

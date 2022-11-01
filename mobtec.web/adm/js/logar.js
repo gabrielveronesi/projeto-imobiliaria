@@ -1,7 +1,7 @@
 function logar() {
     let _user = document.querySelector('#inputUser').value
     let _pass = document.querySelector('#inputPass').value
-    let _urlLoginAdm = 'https://localhost:5001/adm/logar'
+    let _urlLoginAdm = 'https://mobtec-server-teste.herokuapp.com/adm/logar'
 
     if (_user == '' || _pass == '') {
         alert("Preencha os campos de login.")

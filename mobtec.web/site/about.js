@@ -4,7 +4,7 @@ let clienteUrl = text.replace("=", "");
 
 
 //ListarConfigurações
-var urlListarConfiguracao = 'https://localhost:5001/site/listar-configuracoes/' + clienteUrl;
+var urlListarConfiguracao = 'https://mobtec-server-teste.herokuapp.com/site/listar-configuracoes/' + clienteUrl;
 
 axios.get(urlListarConfiguracao)
     .then(function (configuracoes) {

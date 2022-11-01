@@ -1,20 +1,20 @@
-const urlParams = new URLSearchParams(window.location.search);
-let text = urlParams.toString();
-let clienteUrl = text.replace("=", "");
+var urlParams = new URLSearchParams(window.location.search);
+var text = urlParams.toString();
+var clienteUrl = text.replace("=", "");
 localStorage.setItem("clienteUrl", clienteUrl);
-let clienteWhatsapp = "";
-let getBuscaSite = localStorage.getItem("buscaSite")
-let getPaginaNumeroSite = localStorage.getItem("paginaNumeroSite")
+var clienteWhatsapp = "";
+var getBuscaSite = localStorage.getItem("buscaSite")
+var getPaginaNumeroSite = localStorage.getItem("paginaNumeroSite")
 
 if (getPaginaNumeroSite == null) {
     getPaginaNumeroSite = 1
 }
 
-var urlListarConfiguracao = 'https://localhost:5001/site/listar-configuracoes/' + clienteUrl;
+var urlListarConfiguracao = 'https://mobtec-server-teste.herokuapp.com/site/listar-configuracoes/' + clienteUrl;
 axios.get(urlListarConfiguracao)
     .then(function (configuracoes) {
 
-        let _configuracoes = configuracoes.data;
+        var _configuracoes = configuracoes.data;
 
         if (_configuracoes.snAtivo == "N") {
             alert("Cliente não está ativo, TODO: Exibir um erro, e não exibir a pagina!!")
@@ -86,7 +86,7 @@ axios.get(urlListarConfiguracao)
         // sempre executado
     });
 
-var urlListarCasas = 'https://localhost:5001/site/listar-casas-site'
+var urlListarCasas = 'https://mobtec-server-teste.herokuapp.com/site/listar-casas-site'
 axios.post(urlListarCasas, {
 
     //Body
@@ -99,10 +99,10 @@ axios.post(urlListarCasas, {
 
 })
     .then(response => {
-        let tableText = "";
-        let totalPaginas = 0;
-        let paginacao = "";
-        let json = response.data;
+        var tableText = "";
+        var totalPaginas = 0;
+        var paginacao = "";
+        var json = response.data;
 
         json.forEach((casas) => {
 
@@ -131,7 +131,7 @@ axios.post(urlListarCasas, {
         })
 
         var paginacaotxt = '';
-        for (let index = 1; index <= totalPaginas; index++) {
+        for (var index = 1; index <= totalPaginas; index++) {
 
             //paginacaotxt = paginacaotxt + '<button class="btn btn-outline-warning my-lg-2 my-sm-2" style="margin: 0;" onclick="addPagina('+index+')" style="margin:15px;">' + index + '</button>'
             paginacaotxt = paginacaotxt + '<li class="page-item"><a class="page-link" onclick="mudarPagina(' + index + ')">' + index + '</a></li>'
@@ -153,12 +153,12 @@ axios.post(urlListarCasas, {
     });
 
 
-var urlListarCasasDestaque = 'https://localhost:5001/site/listar-casas-destaque?urlCliente=' + clienteUrl;
+var urlListarCasasDestaque = 'https://mobtec-server-teste.herokuapp.com/site/listar-casas-destaque?urlCliente=' + clienteUrl;
 axios.post(urlListarCasasDestaque, {})
     .then(response => {
 
-        let tableText = "";
-        let json = response.data;
+        var tableText = "";
+        var json = response.data;
 
         json.forEach((casasDestaque) => {
             tableText +=
@@ -242,10 +242,10 @@ function buscarCasaFiltro() {
 }
 
 function enviarMensagem() {
-    let inputNome = document.querySelector('#inputNome').value
-    let inputEmail = document.querySelector('#inputEmail').value
-    let inputTelefone = document.querySelector('#inputTelefone').value
-    let inputMensagem = document.querySelector('#inputMensagem').value
+    var inputNome = document.querySelector('#inputNome').value
+    var inputEmail = document.querySelector('#inputEmail').value
+    var inputTelefone = document.querySelector('#inputTelefone').value
+    var inputMensagem = document.querySelector('#inputMensagem').value
 
     clienteWhatsapp = clienteWhatsapp.replace('(', '');
     clienteWhatsapp = clienteWhatsapp.replace(')', '');
@@ -253,7 +253,7 @@ function enviarMensagem() {
     clienteWhatsapp = clienteWhatsapp.replace(' ', '');
     clienteWhatsapp = clienteWhatsapp.replace('  ', '');
 
-    let mensagem = ' ' + inputMensagem + ' Meu celular: ' + inputTelefone + ' E-mail: ' + inputEmail + ' Nome: ' + inputNome
+    var mensagem = ' ' + inputMensagem + ' Meu celular: ' + inputTelefone + ' E-mail: ' + inputEmail + ' Nome: ' + inputNome
     mensagem = mensagem.replace(' ', '%20')
 
     window.location.href = 'https://api.whatsapp.com/send?phone=+55' + clienteWhatsapp + '&text=' + mensagem;

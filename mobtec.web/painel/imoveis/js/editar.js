@@ -16,7 +16,7 @@ const auth = {
 
 function listarDadosCasa() {
 
-    let urlListarDadosCasa = 'https://localhost:5001/painel/listar-dados-casas'
+    let urlListarDadosCasa = 'https://mobtec-server-teste.herokuapp.com/painel/listar-dados-casas'
     let body = {
         idCasa: getIdCasa,
     };
@@ -108,7 +108,7 @@ function atualizar(casaId) {
     var valorConvertido = parseInt(valor);
     //#endregion tratando o valor
 
-    let urlAtualizarImovel = 'https://localhost:5001/painel/atualizar-casa'
+    let urlAtualizarImovel = 'https://mobtec-server-teste.herokuapp.com/painel/atualizar-casa'
     let body = {
         idCasa: casaId,
         idCliente: getIdCliente,
@@ -139,7 +139,7 @@ function atualizar(casaId) {
 }
 
 function ocultar(casaId) {
-    let urlAtualizaOculto = 'https://localhost:5001/painel/ocultar-casa'
+    let urlAtualizaOculto = 'https://mobtec-server-teste.herokuapp.com/painel/ocultar-casa'
     let body = {
         idCasa: casaId,
     };
@@ -161,7 +161,7 @@ function ocultar(casaId) {
 }
 
 function excluir(casaId) {
-    let urlExcluirCasa = 'https://localhost:5001/painel/excluir-casa'
+    let urlExcluirCasa = 'https://mobtec-server-teste.herokuapp.com/painel/excluir-casa'
     let resultado = confirm("Essa ação é irreversível, deseja continuar?");
     let body = {
         idCasa: casaId

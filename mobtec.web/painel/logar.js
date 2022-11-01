@@ -1,4 +1,4 @@
-let urlLogin = 'https://localhost:5001/painel/logar'
+let urlLogin = 'https://mobtec-server-teste.herokuapp.com/painel/logar'
 
 function logar() {
     let email = document.querySelector('#inputEmail').value

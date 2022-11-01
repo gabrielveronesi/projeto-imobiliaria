@@ -22,7 +22,7 @@ var loaderFile = function (event) {
 
     reader.onload = function () {
 
-        let urlAdicionarImagem = 'https://localhost:5001/painel/cadastrar-foto'
+        let urlAdicionarImagem = 'https://mobtec-server-teste.herokuapp.com/painel/cadastrar-foto'
 
         axios.post(urlAdicionarImagem, {
             foto: reader.result,
@@ -37,7 +37,7 @@ var loaderFile = function (event) {
 }
 
 function listarImagens() {
-    var urlListaImagens = 'https://localhost:5001/painel/listar-fotos'
+    var urlListaImagens = 'https://mobtec-server-teste.herokuapp.com/painel/listar-fotos'
 
     axios.post(urlListaImagens, {
 
@@ -71,7 +71,7 @@ function listarImagens() {
 
 function excluirImagem(imagemId) {
 
-    let urlExcluir = 'https://localhost:5001/painel/excluir-foto?idFoto=' + imagemId
+    let urlExcluir = 'https://mobtec-server-teste.herokuapp.com/painel/excluir-foto?idFoto=' + imagemId
     let resultado = confirm("Essa ação é irreversível, deseja continuar?");
 
     if (resultado == true) {

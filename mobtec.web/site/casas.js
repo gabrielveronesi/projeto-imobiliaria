@@ -6,7 +6,7 @@ const endereco = urlParams.get('endereco');
 let clienteUrl = localStorage.getItem("clienteUrl")
 
 
-var urlListarConfiguracao = 'https://localhost:5001/site/listar-configuracoes/' + clienteUrl;
+var urlListarConfiguracao = 'https://mobtec-server-teste.herokuapp.com/site/listar-configuracoes/' + clienteUrl;
 axios.get(urlListarConfiguracao)
     .then(function (configuracoes) {
 
@@ -55,7 +55,7 @@ axios.get(urlListarConfiguracao)
         // sempre executado
     });
 
-var urlListarCasasFiltro = 'https://localhost:5001/site/listar-casas-filtro'
+var urlListarCasasFiltro = 'https://mobtec-server-teste.herokuapp.com/site/listar-casas-filtro'
 axios.post(urlListarCasasFiltro, {
 
     //Body

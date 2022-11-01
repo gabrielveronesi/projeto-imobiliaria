@@ -6,7 +6,7 @@ $(function () {
     })
 })
 
-let urlLogin = 'https://localhost:5001/cliente-autenticado/login'
+let urlLogin = 'https://mobtec-server-teste.herokuapp.com/cliente-autenticado/login'
 let getToken = localStorage.getItem("token")
 let getidCliente = localStorage.getItem("idCliente")
 let getBusca = localStorage.getItem("busca")
@@ -21,7 +21,7 @@ if (getPaginaNumero == null)
     getPaginaNumero = 1
 }
 
-let urlListaCasas = 'https://localhost:5001/painel/listar-casas'
+let urlListaCasas = 'https://mobtec-server-teste.herokuapp.com/painel/listar-casas'
 axios.post(urlListaCasas, {
 
     //Body
@@ -135,7 +135,7 @@ function limparPesquisar() {
 
 function ativar(casaId) {
 
-    let urlAtualizaOculto = 'https://localhost:5001/painel/ocultar-casa'
+    let urlAtualizaOculto = 'https://mobtec-server-teste.herokuapp.com/painel/ocultar-casa'
     let body = {
         idCasa: casaId,
     };

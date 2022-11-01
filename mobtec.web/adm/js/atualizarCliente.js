@@ -2,7 +2,7 @@ let getIdCliente = localStorage.getItem("idCliente")
 localStorage.removeItem("token"); //Removendo idCliente do Cache por segurança
 
 
-let urlListarDadosCliente = 'https://localhost:5001/adm/listar-dados-clientes';
+let urlListarDadosCliente = 'https://mobtec-server-teste.herokuapp.com/adm/listar-dados-clientes';
 
 function listarDadosCliente() {
 
@@ -165,7 +165,7 @@ listarDadosCliente();
 
 function atualizarCliente() {
 
-    let atualizarCliente = 'https://localhost:5001/adm/atualizar-cliente';
+    let atualizarCliente = 'https://mobtec-server-teste.herokuapp.com/adm/atualizar-cliente';
     let body = {
 
         idCliente: getIdCliente,

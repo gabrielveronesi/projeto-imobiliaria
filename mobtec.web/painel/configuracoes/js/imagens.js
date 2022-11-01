@@ -12,7 +12,7 @@ function sair() {
 }
 
 
-var urlListaConfig = 'https://localhost:5001/painel/listar-configuracoes';
+var urlListaConfig = 'https://mobtec-server-teste.herokuapp.com/painel/listar-configuracoes';
 
 
 axios.post(urlListaConfig, { 
@@ -138,7 +138,7 @@ axios.post(urlListaConfig, {
 //   let instagram = document.querySelector('#inputInstagram').value
 //   let whatsapp = document.querySelector('#inputWhatsapp').value
 
-//   let urlAtualizarConfigs = 'https://localhost:5001/painel-adm/adicionar-configuracoes?emailCliente=' + getEmail;
+//   let urlAtualizarConfigs = 'https://mobtec-server-teste.herokuapp.com/painel-adm/adicionar-configuracoes?emailCliente=' + getEmail;
 
 //   let body = {
 //     nome: nome,

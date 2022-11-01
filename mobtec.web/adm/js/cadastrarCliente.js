@@ -1,5 +1,5 @@
 function cadastrarCliente() {
-    let _urlCadastrarCliente = 'https://localhost:5001/adm/cadastrar-cliente'
+    let _urlCadastrarCliente = 'https://mobtec-server-teste.herokuapp.com/adm/cadastrar-cliente'
 
     let body = {
 

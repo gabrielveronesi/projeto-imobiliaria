@@ -38,7 +38,7 @@ function adicionar() {
     var valorConvertido = parseInt(valor);
     //#endregion tratando o valor
 
-    let urlAdicionar = 'https://localhost:5001/painel/cadastrar-casa'
+    let urlAdicionar = 'https://mobtec-server-teste.herokuapp.com/painel/cadastrar-casa'
     axios.post(urlAdicionar, {
         idCliente: getIdCliente,
         titulo: titulo,
