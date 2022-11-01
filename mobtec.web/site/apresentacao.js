@@ -1,8 +1,8 @@
-const urlParams = new URLSearchParams(window.location.search);
-const idCasa = urlParams.get('casa'); //pegar o valor da url casa
-let clienteUrl = localStorage.getItem("clienteUrl")
-let nomeCliente = "";
-let tituloCasa = "";
+var urlParams = new URLSearchParams(window.location.search);
+var idCasa = urlParams.get('casa'); //pegar o valor da url casa
+var clienteUrl = localStorage.getItem("clienteUrl")
+var nomeCliente = "";
+var tituloCasa = "";
 
 
 //ListarConfigurações
@@ -11,7 +11,7 @@ var urlListarConfiguracao = 'https://mobtec-server-teste.herokuapp.com/site/list
 axios.get(urlListarConfiguracao)
     .then(function (configuracoes) {
 
-        let _configuracoes = configuracoes.data;
+        var _configuracoes = configuracoes.data;
 
         if (_configuracoes.snAtivo == "N") {
             alert("Cliente não está ativo, TODO: Exibir um erro, e não exibir a pagina!!")

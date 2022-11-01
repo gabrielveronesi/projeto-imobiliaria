@@ -63,7 +63,7 @@ axios.get(urlListarConfiguracao)
             '<div class="col-md-4">' +
             '<h3>Menu Link</h3>' +
             '<ul class="link_menu">' +
-            '<li><a href="index.html?' + clienteUrl + '">Home</a></li>' + 
+            '<li><a href="index.html?' + clienteUrl + '">Home</a></li>' +
             '<li><a href="about.html?' + clienteUrl + '">Sobre</a></li>' +
             '<li><a href="contact.html?' + clienteUrl + '">Contato</a></li>' +
             '</ul>' +
@@ -160,33 +160,23 @@ axios.post(urlListarCasasDestaque, {})
         var tableText = "";
         var json = response.data;
 
+        tableText += ''
+
         json.forEach((casasDestaque) => {
             tableText +=
-                '<div class="container">' +
-                '<div class="row">' +
-                '<div class="col-md-12">' +
-                '<div class="titlepage">' +
-                '<h2>Imóveis em destaque</h2>' +
-                '<p>Confira algum dos nossos imóveis em destaque.</p>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '<div class="row">' +
                 '<div class="col-md-4">' +
                 '<div class="blog_box">' +
                 '<div class="blog_img">' +
                 '<a href="apresentacao.html?' + clienteUrl + '&casa=' + casasDestaque.idCasa + '">' +
                 '<figure><img src="images/blog1.jpg" alt="#" /></figure>' +
                 '</div>' +
-                ' <div class="blog_room">' +
-                ' <h3>' + casasDestaque.titulo + '</h3>' +
-                ' <span>R$' + formatarMoeda(casasDestaque.valor) + '</span>' +
+                '<div class="blog_room">' +
+                '<h3>' + casasDestaque.titulo + '</h3>' +
+                '<span>R$' + formatarMoeda(casasDestaque.valor) + '</span>' +
                 '<p>' + casasDestaque.pequenaDescricao + '</p>' +
                 '</div>' +
                 '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
+                '</div>'
         })
 
         document.getElementById("ListaCasasDestaque").innerHTML = tableText

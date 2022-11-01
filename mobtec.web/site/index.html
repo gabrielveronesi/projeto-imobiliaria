@@ -33,6 +33,7 @@
    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
+      
    <script src="index.js"></script>
 
 </head>
@@ -127,7 +128,7 @@
                               </div>
                               <div class="col-md-12">
                                  <span>Endereço</span>
-                                 <input class="online_book" placeholder="" type="text" id="filtroEndereco">    
+                                 <input class="online_book" placeholder="" type="text" id="filtroEndereco">
                                  </select>
                               </div>
                               <div class="col-md-12">
@@ -166,8 +167,20 @@
 
    <!-- end gallery -->
    <!-- blog -->
-   <div class="blog" style="width:100%" id="ListaCasasDestaque">
-     
+   <div class="blog" style="width:100%">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="titlepage">
+                  <h2>Imóveis em destaque</h2>
+                  <p>Confira algum dos nossos imóveis em destaque.</p>
+               </div>
+            </div>
+         </div>
+         <div class="row" id="ListaCasasDestaque">
+            
+         </div>
+      </div>
    </div>
    <!-- end blog -->
    <!--  contact -->
@@ -191,10 +204,12 @@
                      <input class="contactus" placeholder="Email" type="type" id="inputEmail" name="Email">
                   </div>
                   <div class="col-md-12">
-                     <input class="contactus" placeholder="Numero de Telefone" id="inputTelefone" type="type" name="Phone Number">
+                     <input class="contactus" placeholder="Numero de Telefone" id="inputTelefone" type="type"
+                        name="Phone Number">
                   </div>
                   <div class="col-md-12">
-                     <textarea class="textarea" placeholder="Mensagem" type="type" id="inputMensagem" Message="Name">Mensagem</textarea>
+                     <textarea class="textarea" placeholder="Mensagem" type="type" id="inputMensagem"
+                        Message="Name">Mensagem</textarea>
                   </div>
                   <div class="col-md-12">
                      <button class="send_btn" onclick="enviarMensagem()">Enviar</button>
